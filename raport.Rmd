@@ -1,0 +1,62 @@
+---
+title: ""
+date: "`r Sys.Date()`"
+output:
+  rmdformats::downcute:
+    self_contained: true
+    default_style: "light"
+    downcute_theme: "default"
+---
+
+
+```{r setup, include=FALSE}
+## Global options
+knitr::opts_chunk$set(cache = TRUE)
+dane <- read.csv("apartments_rent_pl_2024_06.csv")
+library(tidyverse)
+library(naniar)
+```
+
+# 1. Wprowadzenie
+
+
+
+
+
+# 2. Porządkowanie i czyszczenie danych
+
+```{r}
+vis_miss(dane)
+```
+
+```{r}
+#shadow mapa
+gg_miss_var(dane, show_pct=TRUE)
+gg_miss_upset(dane)
+gg_miss_fct(dane,fct=hasBalcony)
+```
+```{r}
+dane %>%
+```group_by(city) %>%
+   miss_var_summary()
+```
+
+```{r}
+gg_miss_span(dane,
+             city,
+             span_every = 100,
+             facet= ownership
+             )
+```{r}
+```
+```{r}
+
+```
+
+## 2.2 Spójność danych 
+
+-
+
+
+
+Sprawdź, czy nie masz brudnych danych. 
